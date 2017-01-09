@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<style>
+header{
+    text-align: center;
+	font-size: 3em;
+	margin-top:12%;
+	color:white;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+}
+.m{
+background-color: lightseagreen;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+	margin-top:5%;
+	margin-left:1%;
+	width:159%;
+padding:10px;
+  border-radius:2px;
+  opacity: 1;
+}
+input[type = "text"],
+input[type = "password"]{
+    color: white;
+    padding: 11px 22px;
+    text-decoration: none;
+    display: inline-block;
+	width:150%;
+	 padding:5%;
+  border-radius:2px;
+  border:1px solid blue;
+  color:black;
+}
+form{
+	margin-left:40%;
+
+}
+</style>
+<script type="text/javascript">
+function formValidation() {    
+var uemail = document.myform.mailid;  
+var upassword = document.myform.password;
+
+if(Mail(uemail)){
+return true;
+}
+else{
+return false;
+}
+}
+ 
+function Mail(uemail){
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(uemail.value.match(mailformat))  
+{  
+return true;  
+}  
+else  
+{  
+alert('You have entered an invalid "email address"!');  
+return false;  
+}  
+}
+history.forward();
+</script>  
+
+</head>
+
+<body background="background-images-hd-11.jpg">
+
+<header>
+Feedback Form
+</header><br><br><br>
+<form action="UserLoginServlet" name="myform" onSubmit="return formValidation();">
+<table>
+<tr>
+<td><input type = "text" placeholder = "Email-Id" name = "mailid"></td>
+</tr>
+<tr>
+<td><input type = "password" placeholder = "Password" name = "password"></td>
+</tr>
+<tr>
+<td><input type = "submit" value = "Login" class = "m"></td>
+</tr>
+</table>
+</form>
+
+</body>
+
+</html>
